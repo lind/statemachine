@@ -9,6 +9,7 @@ cache:
   - $HOME/.gradle/wrapper/
 deploy:
   provider: bintray
+  user: lind
   dry-run: true
 env:
   global:
