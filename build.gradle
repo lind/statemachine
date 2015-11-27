@@ -1,4 +1,7 @@
 buildscript {
+    ext {
+        statemachineVersion = '0.0.2'
+    }
     repositories {
         jcenter()
     }
@@ -9,10 +12,11 @@ plugins {
 }
 
 group 'org.nextstate'
-version '0.0.1-SNAPSHOT'
+version '0.0.1'
 
 apply plugin: 'groovy'
 apply plugin: 'java'
+apply plugin: 'maven-publish'
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
@@ -20,7 +24,6 @@ targetCompatibility = 1.8
 repositories {
     mavenCentral()
 }
-
 
 dependencies {
     compile 'org.codehaus.groovy:groovy-all:2.3.11'
@@ -31,15 +34,35 @@ dependencies {
 }
 
 // See: https://github.com/bintray/bintray-examples/blob/master/gradle-bintray-plugin-examples/configurations-example/build.gradle
+
+publishing {
+    publications {
+        MyPublication(MavenPublication) {
+            from components.java
+            groupId 'org.nextstate'
+            artifactId 'statemachine'
+            version '0.0.2'
+        }
+    }
+}
+
 bintray {
     user = project.hasProperty('bintrayUser') ? project.property('bintrayUser') : System.getenv('BINTRAY_USER')
     key = project.hasProperty('bintrayApiKey') ? project.property('bintrayApiKey') : System.getenv('BINTRAY_API_KEY')
+    publications = ['MyPublication']
     pkg {
-        repo = 'nextstate'
-        name = 'statemachine-project'
+        repo = 'generic'
+        name = 'statemachine'
 //        userOrg = 'bintray_user'
         licenses = ['Apache-2.0']
-        vcsUrl = 'https://github.com/bintray/gradle-bintray-plugin.git'
+        vcsUrl = 'https://github.com/lind/statemachine.git'
+        version {
+            name = '0.0.2'
+            desc = 'Statemachine lib'
+//            released  = new Date()
+            vcsTag = '0.0.2 tag'
+            attributes = ['attr': 'org.nextstate:statemachine']
+        }
     }
 }
 

@@ -1,0 +1,11 @@
+deploy:
+  provider: bintray
+  file: Path to a descriptor file, containing information for the Bintray upload
+  user: lind
+  key: Bintray API key
+  passphrase: Optional. In case a passphrase is configured on Bintray and GPG signing
+    is used
+  dry-run: true
+env:
+  global:
+    secure: skustHzhx6aHqNVfp6n8YC6sznRUwwYaE3dL+2SHUHU3x+fTafP6zyY4iBCJAniWrXQ052m+KEc+Xqpe3eWwPXz5LyvjaMi9zB78UFsHTfPeDJcllnbyYeF1zJ+AshqThcYoNie9WscNU9ks9p9Nz8Y74tWZAtP+6su263KtMxGGhOT0xuzv5cJlL8yxMh1J+TE+rChHdVnbFpkwpWa0MgSp1m9gYt+r1Vo7zlbgC+lyuvDRSFTXTbLRWWG+HNLrMtBbwGy2Sm9nxFIcr6OL4hy3mEO8uPldPin1Yx8l/5/Z80nLXFLdyp/9upfc1qpty+MBKejbrjhNgr3B1lx6YEp88R0oEQKIiDf4qhbtDHv8hItpOK2CmHc7rAT+qEqUYXx0QTmxpSjwmFC35T3XHfcxJhFGGUlSYCnF3STJyxQMriPAMrBjKCDYDxQX8Is7hvF6sXJEwpuqeCUsn8e2t7tfSGaUpHYVKb2A8T/B1CWZKkX3m9JuehAszyM3IFdpSTA/ogqoMJ2/jOQ84UlxTPkIGjDdeGCCwyG1SzFsKLW0q8V8ypA7Yh/9leU23Sj1FWA0ag1o5tP1lrc7pnyFMvyWa/fkb8wdmahSKYcg7gSrLaU3AkP0E6clInqvou26SsuvIdsgtgPfWSTPOc8MioqSlix333I6kvA7CliixKo=
