@@ -1,3 +1,4 @@
+language: java
 deploy:
   provider: bintray
   file: Path to a descriptor file, containing information for the Bintray upload
