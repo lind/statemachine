@@ -1,6 +1,8 @@
 language: java
 jdk:
 - oraclejdk8
+after_success:
+- ./gradlew cobertura coveralls
 before_cache:
 - rm -f $HOME/.gradle/caches/modules-2/modules-2.lock
 cache:
@@ -15,3 +17,4 @@ deploy:
   key:
     secure: ksBtQtgM1hf4YYqqZTcvq1rVPEeZmORrr7bB26W2PsI+volBfBCwbA1fG7G/inKdZRj1BWTZRiaBcrSDBomVGKe0edXHPOYw5nkvMq8QolGaj7E73aB7ktA+Ji7TZVooNkIdw3uel5dinXtj7++IGyv4y+FybPyP+CNwWs/zvCSabz5Rtf4rfJsg4CrfrKnbw4841DEKPC2DhkWf0FSaEplf1LSUVkbpU2BK2Ods+Hxt9WnFSclsVPXRAdjXA1pwNM8Xh3rhaSwIgOe95IBuydFSEN8j1yNReva3EKqR3mnQ/rMF80ukSKcxiZ4TUSgDb2mo/6eQhUza7Ddl1hxJeSHanYXbgpKIBqWPayWx2lVC9N/EP++RCVeeD9wjMshkRNRnYr7pXPIJ/vQNX2jEn+X0uNONSXFCjFzsMn3gLr25m0l4Gf43719+dygLVaAvfb8cBSVjMFYrmEAJDe3r3NyywBXvYc50sMKyDJIXTDSCdES4XE3pYKJcY+O+RMeuubdzGcoh6uACGKhSjVHmh+kAyEZ80DELEV7+cdJjo7PHCliu45SdJYRNRh1SVWtGj8o9TkJ6VUkH3bmLEulKvQuJvUbLWkXkbLlVuAMN/E+K+35WsK2llkbhKVHCjwe6DbN0mVfUWwEUk55MbL20gOmdCeMjeyQCipPv+BAeY+c=
   dry-run: false # Optional. If true, skips sending requests to Bintray. Useful for testing your configuration
+

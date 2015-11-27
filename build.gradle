@@ -5,11 +5,17 @@ buildscript {
     repositories {
         jcenter()
     }
+    dependencies {
+        classpath 'net.saliman:gradle-cobertura-plugin:2.0.0' // cobertura plugin
+        classpath 'org.kt3k.gradle.plugin:coveralls-gradle-plugin:2.4.0'
+    }
 }
 
 plugins {
     id "com.jfrog.bintray" version "1.4"
 }
+
+cobertura.coverageFormats = ['html', 'xml'] // coveralls plugin depends on xml format report
 
 group 'org.nextstate'
 version '0.0.1'
@@ -17,6 +23,8 @@ version '0.0.1'
 apply plugin: 'groovy'
 apply plugin: 'java'
 apply plugin: 'maven-publish'
+apply plugin: 'cobertura'
+apply plugin: 'com.github.kt3k.coveralls'
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
