@@ -1,0 +1,36 @@
+{
+    /* Bintray package information.
+       In case the package already exists on Bintray, only the name, repo and subject
+       fields are mandatory. */
+
+    "package": {
+        "name": "statemachine", // Bintray package name
+        "repo": "nextstate", // Bintray repository name
+        "subject": "lind", // Bintray subject (user or organization)
+        "desc": "I was pushed completely automatically",
+        "website_url": "www.nextstate.org",
+        "issue_tracker_url": "https://github.com/lind/statemachine/issues",
+        "vcs_url": "https://github.com/lind/statemachine.git",
+        "github_use_tag_release_notes": true,
+#        "github_release_notes_file": "RELEASE.txt",
+        "licenses": ["Apache-2.0"],
+        "labels": ["cool", "awesome"],
+        "public_download_numbers": false,
+        "public_stats": false,
+        "attributes": [{"name": "att1", "values" : ["val1"], "type": "string"},
+                       {"name": "att5", "values" : ["2014-12-28T19:43:37+0100"], "type": "date"}]
+    },
+
+    /* Package version information.
+       In case the version already exists on Bintray, only the name fields is mandatory. */
+
+    "version": {
+        "name": "0.0.3",
+        "desc": "This is a version",
+        "released": "2015-11-27",
+        "vcs_tag": "0.0.3.0",
+        "attributes": [{"name": "VerAtt1", "values" : ["VerVal1"], "type": "string"},
+                       {"name": "VerAtt3", "values" : ["2015-01-01T19:43:37+0100"], "type": "date"}],
+        "gpgSign": false
+    }
+}
