@@ -5,7 +5,7 @@
 
     "package": {
         "name": "statemachine", // Bintray package name
-        "repo": "nextstate", // Bintray repository name
+        "repo": "generic", // Bintray repository name
         "subject": "lind", // Bintray subject (user or organization)
         "desc": "I was pushed completely automatically",
         "website_url": "www.nextstate.org",
