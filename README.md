@@ -1,4 +1,6 @@
 [![Build Status](https://travis-ci.org/lind/statemachine.png?branch=master)](https://travis-ci.org/lind/statemachine)
+[![Dependency Status](https://www.versioneye.com/user/projects/5658d873c6b25e0038000000/badge.svg?style=flat)](https://www.versioneye.com/user/projects/5658d873c6b25e0038000000)
+[![Coverage Status](https://coveralls.io/repos/lind/statemachine/badge.svg?branch=master&service=github)](https://coveralls.io/github/lind/statemachine?branch=master)
 
 # A State Machine implementation in Java
 
