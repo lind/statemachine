@@ -41,7 +41,7 @@ publishing {
             from components.java
             groupId 'org.nextstate'
             artifactId 'statemachine'
-            version '0.0.2'
+            version '0.0.3'
         }
     }
 }
@@ -51,13 +51,13 @@ bintray {
     key = project.hasProperty('bintrayApiKey') ? project.property('bintrayApiKey') : System.getenv('BINTRAY_API_KEY')
     publications = ['MyPublication']
     pkg {
-        repo = 'generic'
+        repo = 'maven'
         name = 'statemachine'
 //        userOrg = 'bintray_user'
         licenses = ['Apache-2.0']
         vcsUrl = 'https://github.com/lind/statemachine.git'
         version {
-            name = '0.0.2'
+            name = '0.0.3'
             desc = 'Statemachine lib'
 //            released  = new Date()
             vcsTag = '0.0.2 tag'

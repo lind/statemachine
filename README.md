@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/lind/statemachine.png?branch=master)](https://travis-ci.org/lind/statemachine)
+
 # A State Machine implementation in Java
 
 Simple State Machine with transitions, guards, actions.
