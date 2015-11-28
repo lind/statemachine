@@ -2,7 +2,8 @@ language: java
 jdk:
 - oraclejdk8
 after_success:
-- ./gradlew test jacocoTestReport coveralls
+- bash <(curl -s https://codecov.io/bash)
+# - ./gradlew test jacocoTestReport coveralls
 before_cache:
 - rm -f $HOME/.gradle/caches/modules-2/modules-2.lock
 cache:

@@ -11,6 +11,7 @@ plugins {
     id "com.jfrog.bintray" version "1.4"
     id 'net.saliman.cobertura' version '2.2.7'
     id 'com.github.kt3k.coveralls' version '2.4.0'
+    id "org.sonarqube" version "1.1"
 }
 
 group 'org.nextstate'
@@ -20,6 +21,7 @@ apply plugin: 'groovy'
 apply plugin: 'java'
 apply plugin: 'maven-publish'
 apply plugin: 'jacoco'
+apply plugin: 'findbugs'
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
@@ -33,6 +35,8 @@ jacocoTestReport {
         html.enabled = true
     }
 }
+
+check.dependsOn jacocoTestReport
 
 cobertura {
 //    coverageSourceDirs = ['src/main/java']
@@ -52,14 +56,13 @@ dependencies {
 }
 
 // See: https://github.com/bintray/bintray-examples/blob/master/gradle-bintray-plugin-examples/configurations-example/build.gradle
-
 publishing {
     publications {
         MyPublication(MavenPublication) {
             from components.java
             groupId 'org.nextstate'
             artifactId 'statemachine'
-            version '0.0.3'
+            version '0.1'
         }
     }
 }
@@ -84,6 +87,6 @@ bintray {
     }
 }
 
-task wrapper(type: Wrapper, description:"create a gradlew") {
+task wrapper(type: Wrapper, description: "create a gradlew") {
     gradleVersion = '2.9'
 }
