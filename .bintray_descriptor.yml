@@ -1,4 +1,5 @@
 {
+// Used by travis
     /* Bintray package information.
        In case the package already exists on Bintray, only the name, repo and subject
        fields are mandatory. */
