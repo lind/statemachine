@@ -20,12 +20,13 @@ apply plugin: 'groovy'
 apply plugin: 'java'
 apply plugin: 'maven-publish'
 apply plugin: 'jacoco'
-// apply plugin: 'cobertura'
-//apply plugin: 'com.github.kt3k.coveralls'
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
+// Error on travis: "No source file found on the project: statemachine" see:
+// https://github.com/kt3k/coveralls-gradle-plugin/issues/32
+// https://github.com/ben-manes/caffeine/blob/master/build.gradle
 jacocoTestReport {
     reports {
         xml.enabled = true // coveralls plugin depends on xml format report
@@ -33,7 +34,10 @@ jacocoTestReport {
     }
 }
 
-cobertura.coverageFormats = ['html', 'xml'] // coveralls plugin depends on xml format report
+cobertura {
+//    coverageSourceDirs = ['src/main/java']
+    coverageFormats = ['html', 'xml'] // coveralls plugin depends on xml format report
+}
 
 repositories {
     mavenCentral()
