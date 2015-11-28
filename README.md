@@ -1,5 +1,6 @@
 [![Build Status](https://travis-ci.org/lind/statemachine.png?branch=master)](https://travis-ci.org/lind/statemachine)
 [![Dependency Status](https://www.versioneye.com/user/projects/5658dcc4c6b25e002b000000/badge.svg?style=flat)](https://www.versioneye.com/user/projects/5658dcc4c6b25e002b000000)
+[![Circle CI](https://circleci.com/gh/lind/statemachine.svg?style=svg)](https://circleci.com/gh/lind/statemachine)
 
 # A State Machine implementation in Java
 
@@ -26,8 +27,8 @@ Inspired by [simplestatemachine](http://simplestatemachine.codeplex.com/)
 
 **Phone State Machine**   
 Generated from code by [Graphviz](http://www.graphviz.org/) using toDot() in StateMachine  
-´´´
+```bash
 dot -Tjpg -o <filename of image> <file with dot format>
-´´´
+```
 
 ![Phone State Machine Diagram](PhoneStateMachine.bmp "Phone State Machine Diagram")
