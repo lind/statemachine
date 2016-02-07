@@ -8,6 +8,7 @@ import java.util.Arrays;
 
 import org.junit.Test;
 
+@SuppressWarnings("checkstyle:methodname")
 public class StateMachineTest {
 
     private static final String A_SIMPLE_STATE = "ASimpleState";

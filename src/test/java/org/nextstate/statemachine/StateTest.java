@@ -6,10 +6,8 @@ import static org.nextstate.statemachine.Transition.transitions;
 import java.util.Optional;
 
 import org.junit.Test;
-import org.nextstate.statemachine.FinalState;
-import org.nextstate.statemachine.SimpleState;
-import org.nextstate.statemachine.State;
 
+@SuppressWarnings("checkstyle:methodname")
 public class StateTest {
     private static final String CALL_DIAL = "CallDial";
     private static final String CALL_DIALED = "CallDialed";

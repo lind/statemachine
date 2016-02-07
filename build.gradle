@@ -30,14 +30,15 @@ jacoco {
 // Error on travis: "No source file found on the project: statemachine" see:
 // https://github.com/kt3k/coveralls-gradle-plugin/issues/32
 // https://github.com/ben-manes/caffeine/blob/master/build.gradle
-jacocoTestReport {
+/* jacocoTestReport {
     reports {
         xml.enabled = true // coveralls plugin depends on xml format report
         html.enabled = true
     }
 }
+*/
 
-check.dependsOn jacocoTestReport
+//check.dependsOn jacocoTestReport
 
 cobertura {
 //    coverageSourceDirs = ['src/main/java']

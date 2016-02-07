@@ -20,8 +20,10 @@
 -->
 
 <module name="Checker">
-<!--    <module name="SuppressionFilter">
-        <property name="file" value="suppressions.xml" />
+    <module name="SuppressWarningsFilter" />
+
+    <!--    <module name="SuppressionFilter">
+            <property name="file" value="suppressions.xml" />
     </module> -->
     <!-- Checks that a package-info.java file exists for each package.     -->
     <!-- See http://checkstyle.sf.net/config_javadoc.html#JavadocPackage -->
@@ -60,6 +62,8 @@
     <!-- </module> -->
 
     <module name="TreeWalker">
+
+        <module name="SuppressWarningsHolder" />
 
         <!-- Checks for Javadoc comments.                     -->
         <!-- See http://checkstyle.sf.net/config_javadoc.html -->

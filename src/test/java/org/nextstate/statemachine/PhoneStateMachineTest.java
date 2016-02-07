@@ -8,6 +8,7 @@ import org.junit.Test;
 /**
  * Tests using the state machine defined in {@link PhoneStateMachine}
  */
+@SuppressWarnings("checkstyle:methodname")
 public class PhoneStateMachineTest {
 
     @Test
