@@ -6,7 +6,7 @@ jdk:
 - oraclejdk8
 
 before_install:
-  - sudo pip install --upgrade pip
+#  - sudo pip install --upgrade pip
   - pip install --user codecov
 
 #before_script:
