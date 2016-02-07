@@ -1,6 +1,6 @@
 language: java
 # install: sudo apt-get install graphviz -y
-# sudo: false # faster builds
+sudo: required # false # faster builds
 # script:
 jdk:
 - oraclejdk8
