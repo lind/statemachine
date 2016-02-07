@@ -1,8 +1,17 @@
 language: java
+# install: sudo apt-get install graphviz -y
+# script:
 jdk:
 - oraclejdk8
+
+before_script:
+- pip install --user codecov
+
 after_success:
-- bash <(curl -s https://codecov.io/bash)
+- codecov
+
+#after_success:
+#- bash <(curl -s https://codecov.io/bash)
 # - ./gradlew test jacocoTestReport coveralls
 before_cache:
 - rm -f $HOME/.gradle/caches/modules-2/modules-2.lock

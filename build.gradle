@@ -1,7 +1,4 @@
 buildscript {
-    ext {
-        statemachineVersion = '0.0.2'
-    }
     repositories {
         jcenter()
     }
@@ -13,13 +10,22 @@ plugins {
     id 'com.github.kt3k.coveralls' version '2.4.0'
 }
 
+ext {
+    statemachineVersion = '0.1.1'
+}
+
 apply plugin: 'groovy'
 apply plugin: 'java'
 apply plugin: 'maven-publish'
 apply plugin: 'jacoco'
+apply plugin: 'checkstyle'
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
+
+jacoco {
+    toolVersion = "0.7.5.201505241946"
+}
 
 // Error on travis: "No source file found on the project: statemachine" see:
 // https://github.com/kt3k/coveralls-gradle-plugin/issues/32
@@ -50,6 +56,15 @@ dependencies {
     testCompile 'org.assertj:assertj-core:3.2.0'
 }
 
+task sourcesJar(type: Jar, dependsOn: classes) {
+    classifier = 'sources'
+    from sourceSets.main.allSource
+}
+
+artifacts {
+    archives sourcesJar
+}
+
 // See: https://github.com/bintray/bintray-examples/blob/master/gradle-bintray-plugin-examples/configurations-example/build.gradle
 publishing {
     publications {
@@ -57,7 +72,9 @@ publishing {
             from components.java
             groupId 'org.nextstate'
             artifactId 'statemachine'
-            version '0.1'
+            version statemachineVersion
+
+            artifact sourcesJar
         }
     }
 }
@@ -65,15 +82,17 @@ publishing {
 bintray {
     user = project.hasProperty('bintrayUser') ? project.property('bintrayUser') : System.getenv('BINTRAY_USER')
     key = project.hasProperty('bintrayApiKey') ? project.property('bintrayApiKey') : System.getenv('BINTRAY_API_KEY')
+//    configurations = ['archives']
     publications = ['MyPublication']
     pkg {
         repo = 'maven'
         name = 'statemachine'
 //        userOrg = 'bintray_user'
         licenses = ['Apache-2.0']
+        publish = true
         vcsUrl = 'https://github.com/lind/statemachine.git'
         version {
-            name = '0.0.3'
+            name = statemachineVersion
             desc = 'Statemachine lib'
 //            released  = new Date()
             attributes = ['attr': 'org.nextstate:statemachine']

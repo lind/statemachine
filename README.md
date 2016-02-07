@@ -32,3 +32,6 @@ dot -Tjpg -o <filename of image> <file with dot format>
 ```
 
 ![Phone State Machine Diagram](PhoneStateMachine.bmp "Phone State Machine Diagram")
+
+## Bintray upload
+```gradlew -PbintrayApiKey=<api key> bintrayUpload```
