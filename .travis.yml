@@ -7,13 +7,10 @@ jdk:
 
 before_install:
 #  - sudo pip install --upgrade pip
-  - pip install --user codecov
-
-#before_script:
-#- pip install --user codecov
+#  - pip install --user codecov
 
 after_success:
-- codecov
+# - codecov
 - ./gradlew jacocoTestReport coveralls
 
 #after_success:
