@@ -37,6 +37,10 @@ jacocoTestReport {
     }
 }
 
+tasks.coveralls {
+    dependsOn 'check'
+}
+
 //check.dependsOn jacocoTestReport
 
 cobertura {
