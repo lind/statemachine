@@ -37,8 +37,7 @@ jacocoTestReport {
     }
 }
 
-
-check.dependsOn jacocoTestReport
+//check.dependsOn jacocoTestReport
 
 cobertura {
     coverageSourceDirs = ['src/main/java']
